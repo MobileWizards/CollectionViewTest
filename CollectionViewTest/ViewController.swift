@@ -21,18 +21,20 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
         collectionView.collectionViewLayout = createLayout()
         // Register the custom cell
         collectionView.register(UINib(nibName: "TestCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "TestCollectionViewCell")
+        collectionView.register(UINib(nibName: "ComplexCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "ComplexCollectionViewCell")
     }
     
     // MARK: - UICollectionViewDataSource
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         // Return the number of items in your collection view
-        return 10
+        return 20
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         // Dequeue a reusable cell and cast it to your custom cell class
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "TestCollectionViewCell", for: indexPath) as! TestCollectionViewCell
+       // let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "TestCollectionViewCell", for: indexPath) as! TestCollectionViewCell
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ComplexCollectionViewCell", for: indexPath) as! ComplexCollectionViewCell
         
         // Customize the cell here if needed
         
